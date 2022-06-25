@@ -4,7 +4,8 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     rules: {
         'prettier/prettier': 0,
-        'comma-dangle': ['warn', 'never']
+        'comma-dangle': ['warn', 'never'],
+        '@typescript-eslint/no-unused-vars': 0
     },
     overrides: [
         {
