@@ -1,23 +1,24 @@
 import {Button, Text, View} from "react-native";
-import React from "react";
-import {NativeStackScreenProps} from "@react-navigation/native-stack";
-import {RootStackParamList} from "../util/routes";
+import React, {useState} from "react";
+import {useNavigation} from "@react-navigation/native";
+import PhoneInput from "react-phone-number-input/react-native-input";
+import {E164Number} from "libphonenumber-js";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Register">;
-type State = {}
+const RegisterScreen: React.FC = () => {
+    const navigation = useNavigation();
+    const [number, setNumber] = useState<E164Number>();
 
-class RegisterScreen extends React.Component<Props, State> {
-    state : State = {}
+    return (
+        <View>
+            <Text>Salut {number}</Text>
 
-    render() {
-
-        return (
-            <View>
-                <Text>Salut</Text>
-                <Button title="Truc" onPress={() => this.props.navigation.navigate("Validate")}/>
-            </View>
-        );
-    }
-}
+            <PhoneInput
+                placeholder="Enter phone number"
+                value={number}
+                onChange={setNumber}/>
+            <Button title="Truc" onPress={() => navigation.navigate("Validate")}/>
+        </View>
+    );
+};
 
 export default RegisterScreen;
