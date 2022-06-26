@@ -1,4 +1,4 @@
-package com.picit.newarchitecture;
+package space.picit.app.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.picit.BuildConfig;
-import com.picit.newarchitecture.components.MainComponentsRegistry;
-import com.picit.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import space.picit.app.BuildConfig;
+import space.picit.app.newarchitecture.components.MainComponentsRegistry;
+import space.picit.app.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

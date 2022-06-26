@@ -1,4 +1,4 @@
-package com.picit;
+package space.picit.app;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

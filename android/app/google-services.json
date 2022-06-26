@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "457644736193",
+    "firebase_url": "https://picit-c6fa9-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "picit-c6fa9",
+    "storage_bucket": "picit-c6fa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457644736193:android:ca5699ab4ad7c3537c9e40",
+        "android_client_info": {
+          "package_name": "space.picit.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457644736193-rrqbq4tm43vjpn6sqn3fg7p31f845m99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYfQi7uyg-Goki8I3HeCBbLsLCkcpBQ00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457644736193-rrqbq4tm43vjpn6sqn3fg7p31f845m99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
