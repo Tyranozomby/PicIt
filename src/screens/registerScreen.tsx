@@ -10,6 +10,7 @@ class RegisterScreen extends React.Component<Props, State> {
     state : State = {}
 
     render() {
+
         return (
             <View>
                 <Text>Salut</Text>

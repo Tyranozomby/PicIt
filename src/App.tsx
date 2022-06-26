@@ -15,14 +15,23 @@ import RegisterScreen from "./screens/registerScreen";
 import ValidateScreen from "./screens/validateScreen";
 import {RootStackParamList} from "./util/routes";
 import {Provider} from "react-redux";
-// import {rrfProps, store} from "./util/store";
 import {ReactReduxFirebaseProvider} from "react-redux-firebase";
+import firebase from "@react-native-firebase/app";
 import style from "./App.module.scss";
+
+import {store, rrfConfig} from "./store/store";
+
+
+
+const rrfProps = {
+    firebase,
+    config: rrfConfig,
+    dispatch: store.dispatch
+};
 
 type State = {
     initialized: boolean,
 }
-
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -32,16 +41,16 @@ class App extends React.Component<{}, State> {
 
     render() {
         return (
-            // <Provider store={store}>
-            //     <ReactReduxFirebaseProvider {...rrfProps}>
+            <Provider store={store}>
+                {/*<ReactReduxFirebaseProvider {...rrfProps}>*/}
                     <NavigationContainer>
                         <Stack.Navigator>
                             <Stack.Screen name="Register" component={RegisterScreen}/>
                             <Stack.Screen name="Validate" component={ValidateScreen}/>
                         </Stack.Navigator>
                     </NavigationContainer>
-            //     </ReactReduxFirebaseProvider>
-            // </Provider>
+                 {/*</ReactReduxFirebaseProvider>*/}
+             </Provider>
         );
     }
 }
