@@ -1,13 +1,13 @@
 import {Button, Text, View} from "react-native";
 import React from "react";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
-import {RootStackParamList} from "../App";
+import {RootStackParamList} from "../util/routes";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Register">;
 type State = {}
 
 class RegisterScreen extends React.Component<Props, State> {
-    state = {}
+    state : State = {}
 
     render() {
         return (
