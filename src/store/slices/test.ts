@@ -20,7 +20,7 @@ export const testSlice = createSlice({
     }
 });
 
-export const { increment, decrement, incrementBy} = testSlice.actions;
+export const actions = testSlice.actions;
 
 export const selectCount = (state: RootState) => state.testState.value;
 

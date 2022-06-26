@@ -13,6 +13,7 @@ export const rrfConfig = {
 
 
 const initialState = {};
+
 export const store = configureStore({
     reducer: {
         // firebase: firebaseReducer,
