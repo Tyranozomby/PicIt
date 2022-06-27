@@ -6,7 +6,9 @@ module.exports = {
         "prettier/prettier": 0,
         "comma-dangle": ["warn", "never"],
         "@typescript-eslint/no-unused-vars": 0,
-        "quotes": ["warn", "double"]
+        "quotes": ["warn", "double"],
+        "curly": ["warn", "multi"],
+        "no-trailing-spaces": 0
     },
     overrides: [
         {

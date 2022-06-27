@@ -1,16 +1,12 @@
-import RNFireBase from "@react-native-firebase/app";
-import auth from "@react-native-firebase/auth";
-import {combineReducers, createStore} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import testReducer from "./slices/test";
 import userReducer from "./slices/user";
-import { persistStore, persistReducer } from "redux-persist";
 
 
 export const store = configureStore({
     reducer: {
-        testState : testReducer,
-        userState : userReducer
+        testState: testReducer,
+        userState: userReducer
     }
 });
 
