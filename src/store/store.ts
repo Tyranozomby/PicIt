@@ -1,22 +1,13 @@
 import RNFireBase from "@react-native-firebase/app";
 import auth from "@react-native-firebase/auth";
 import {combineReducers, createStore} from "redux";
-import {firebaseReducer, firestoreReducer} from "react-redux-firebase";
 import {configureStore} from "@reduxjs/toolkit";
 import testReducer from "./slices/test";
+import { persistStore, persistReducer } from "redux-persist";
 
-
-export const rrfConfig = {
-    enableRedirectHandling: false,
-    userProfile: "users"
-};
-
-
-const initialState = {};
 
 export const store = configureStore({
     reducer: {
-        // firebase: firebaseReducer,
         testState : testReducer
     }
 });

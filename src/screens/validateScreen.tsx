@@ -13,9 +13,9 @@ const ValidateScreen : React.FC = () =>  {
 
     return (
         <View>
-            <Text>Pas salut</Text>
+            <Text>Pas salut</Text>x
             <Text>Le compteur est a {value}</Text>
-            <Button title={"Augmenter le compteur"} onPress={() => dispatch(testActions.increment)} />
+            <Button title={"Augmenter le compteur"} onPress={() => dispatch(testActions.increment())} />
         </View>
     );
 };
