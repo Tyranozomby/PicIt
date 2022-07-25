@@ -1,22 +1,16 @@
-import React, {ReactNode, useEffect} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import {Text} from "react-native";
-import {Provider} from "react-redux";
-
-import {store} from "./store/store";
-import {useAppDispatch, useAppSelector} from "./store/hooks";
-import AuthenticationScreen from "./screens/login/authenticationScreen";
+import AuthenticationScreen from "./screens/authentication/authenticationScreen";
 import auth from "@react-native-firebase/auth";
-import {actions, logout} from "./store/slices/user";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {NavigationContainer} from "@react-navigation/native";
 
+
 const App: () => ReactNode = () => {
     return (
-        <Provider store={store}>
-            <NavigationContainer>
-                <Nav/>
-            </NavigationContainer>
-        </Provider>
+        <NavigationContainer>
+            <Nav/>
+        </NavigationContainer>
     );
 };
 
@@ -27,24 +21,24 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+function useFirebaseCurrentUser() {
+    const [currentUser, setCurrentUser] = useState(auth().currentUser);
+    useEffect(() => auth().onAuthStateChanged(setCurrentUser), []);
+    return currentUser;
+}
+
 const Nav: React.FC = () => {
-    const loggedIn = useAppSelector((state) => state.userState.loggedIn);
 
-    const dispatch = useAppDispatch();
-    useEffect(() => auth().onAuthStateChanged((u) => {
-        u == null ? dispatch(logout()) : dispatch(actions.login());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }), []);
-
+    const currentUser = useFirebaseCurrentUser();
 
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
-            {loggedIn ?
+            {currentUser == null ?
+                <Stack.Screen name={"Authentication"} component={AuthenticationScreen}/>
+                :
                 <Stack.Screen name={"Main"}>
                     {() => <Text>UwU</Text>}
                 </Stack.Screen>
-                :
-                <Stack.Screen name={"Authentication"} component={AuthenticationScreen}/>
             }
         </Stack.Navigator>
     );
