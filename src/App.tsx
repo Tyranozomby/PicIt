@@ -4,6 +4,7 @@ import AuthenticationScreen from "./screens/authentication/authenticationScreen"
 import auth from "@react-native-firebase/auth";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {NavigationContainer} from "@react-navigation/native";
+import {Main} from "./screens/main/Main";
 
 
 const App: () => ReactNode = () => {
@@ -30,15 +31,12 @@ function useFirebaseCurrentUser() {
 const Nav: React.FC = () => {
 
     const currentUser = useFirebaseCurrentUser();
-
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
             {currentUser == null ?
                 <Stack.Screen name={"Authentication"} component={AuthenticationScreen}/>
                 :
-                <Stack.Screen name={"Main"}>
-                    {() => <Text>UwU</Text>}
-                </Stack.Screen>
+                <Stack.Screen name={"Main"} component={Main}/>
             }
         </Stack.Navigator>
     );
